@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sikaru setup"
+  short_description: "Install the CLI, sign up, sign in and pick a project"
+  default_prompt: "Use $sikaru-setup to install the Sikaru CLI, sign me in and set my project."
+policy:
+  allow_implicit_invocation: true

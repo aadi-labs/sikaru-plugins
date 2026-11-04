@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sikaru-docs": {
+      "type": "http",
+      "url": "https://docs.sikaru.ai/_mcp/server"
+    }
+  }
+}

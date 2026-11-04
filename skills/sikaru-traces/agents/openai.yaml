@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sikaru traces"
+  short_description: "Upload traces and read run trajectories"
+  default_prompt: "Use $sikaru-traces to show what happened in this Sikaru run and where it went wrong."
+policy:
+  allow_implicit_invocation: true

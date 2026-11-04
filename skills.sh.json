@@ -1,0 +1,12 @@
+{
+  "name": "sikaru",
+  "skills": [
+    "sikaru",
+    "sikaru-setup",
+    "sikaru-inference",
+    "sikaru-decision",
+    "author-sikaru-agent",
+    "sikaru-evals",
+    "sikaru-traces"
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sikaru inference"
+  short_description: "Call and compare Sikaru catalog models"
+  default_prompt: "Use $sikaru-inference to list Sikaru models and chat with the cheapest one that supports reasoning."
+policy:
+  allow_implicit_invocation: true

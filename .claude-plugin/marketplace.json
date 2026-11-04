@@ -1,0 +1,67 @@
+{
+  "name": "sikaru",
+  "description": "Official Sikaru plugin and skills from Aadi Labs.",
+  "owner": {
+    "name": "Aadi Labs",
+    "url": "https://sikaru.ai"
+  },
+  "plugins": [
+    {
+      "name": "sikaru",
+      "displayName": "Sikaru",
+      "description": "Sign up for Sikaru and use it from your coding agent: call catalog models, ask System One decisions, build and publish managed agents, run evals in RL environments, and upload traces.",
+      "source": "./",
+      "author": {
+        "name": "Aadi Labs",
+        "url": "https://sikaru.ai"
+      },
+      "homepage": "https://docs.sikaru.ai",
+      "repository": "https://github.com/aadi-labs/sikaru-plugins",
+      "license": "MIT",
+      "keywords": [
+        "sikaru",
+        "managed agents",
+        "AI agents",
+        "inference",
+        "System One",
+        "evals",
+        "RL environments",
+        "traces"
+      ],
+      "category": "development",
+      "tags": [
+        "ai-agents",
+        "managed-agents",
+        "inference",
+        "evals",
+        "rl-environments",
+        "traces",
+        "observability",
+        "development-tools"
+      ],
+      "strict": true,
+      "skills": "./skills/",
+      "mcpServers": "./.mcp.json",
+      "relevance": {
+        "topic": "managed agents, model inference, evals and traces on Sikaru",
+        "signals": {
+          "hosts": ["sikaru.ai", "api.sikaru.ai", "docs.sikaru.ai"],
+          "manifestDeps": [
+            {
+              "file": "[/\\\\]package\\.json$",
+              "pattern": "@aadi-labs/sikaru-(?:sdk|cli)"
+            },
+            {
+              "file": "[/\\\\]pyproject\\.toml$",
+              "pattern": "sikaru[-_]sdk"
+            },
+            {
+              "file": "[/\\\\]requirements[^/\\\\]*\\.txt$",
+              "pattern": "sikaru[-_]sdk"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

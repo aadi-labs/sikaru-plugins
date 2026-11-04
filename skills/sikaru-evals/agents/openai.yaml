@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sikaru evals"
+  short_description: "Evaluate agents in RL environment datasets"
+  default_prompt: "Use $sikaru-evals to build an eval dataset from these examples and run it against my agent."
+policy:
+  allow_implicit_invocation: true

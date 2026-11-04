@@ -1,0 +1,6 @@
+interface:
+  display_name: "Author a Sikaru agent"
+  short_description: "Write, publish and run a managed agent"
+  default_prompt: "Use $author-sikaru-agent to write a Sikaru agent for this repository, validate it and run one task."
+policy:
+  allow_implicit_invocation: true

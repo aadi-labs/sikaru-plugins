@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sikaru decisions"
+  short_description: "Classify and score states with System One"
+  default_prompt: "Use $sikaru-decision to classify these support tickets by category and urgency."
+policy:
+  allow_implicit_invocation: true

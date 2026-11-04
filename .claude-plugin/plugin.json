@@ -1,0 +1,30 @@
+{
+  "name": "sikaru",
+  "version": "0.1.0",
+  "description": "Sign up for Sikaru and use it from your coding agent: call catalog models, ask System One decisions, build and publish managed agents, run evals in RL environments, and upload traces.",
+  "author": {
+    "name": "Aadi Labs",
+    "url": "https://sikaru.ai"
+  },
+  "homepage": "https://docs.sikaru.ai",
+  "repository": "https://github.com/aadi-labs/sikaru-plugins",
+  "license": "MIT",
+  "icon": "./assets/sikaru-icon-512.png",
+  "keywords": [
+    "sikaru",
+    "managed agents",
+    "AI agents",
+    "agent platform",
+    "inference",
+    "model catalog",
+    "System One",
+    "decisions",
+    "evals",
+    "RL environments",
+    "traces",
+    "agent observability",
+    "self-improving agents"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

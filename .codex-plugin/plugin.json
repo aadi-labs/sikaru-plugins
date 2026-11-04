@@ -1,0 +1,43 @@
+{
+  "name": "sikaru",
+  "displayName": "Sikaru",
+  "version": "0.1.0",
+  "description": "Sign up for Sikaru and use it from your coding agent: call catalog models, ask System One decisions, build and publish managed agents, run evals in RL environments, and upload traces.",
+  "author": {
+    "name": "Aadi Labs",
+    "url": "https://sikaru.ai"
+  },
+  "homepage": "https://docs.sikaru.ai",
+  "repository": "https://github.com/aadi-labs/sikaru-plugins",
+  "license": "MIT",
+  "keywords": [
+    "sikaru",
+    "managed agents",
+    "AI agents",
+    "inference",
+    "System One",
+    "evals",
+    "RL environments",
+    "traces"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Sikaru",
+    "shortDescription": "Managed agents, inference, evals and traces",
+    "longDescription": "Sign up for Sikaru from your terminal, then call catalog models, ask System One choice, yes-or-no and score questions, write and publish managed agents from one Markdown document, evaluate them in RL environments, and upload traces from other systems. The plugin also connects the public Sikaru docs over MCP.",
+    "developerName": "Aadi Labs",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://sikaru.ai",
+    "defaultPrompt": [
+      "Set me up with Sikaru: install the CLI, sign me in and pick a project.",
+      "List the Sikaru catalog models and chat with one.",
+      "Write a Sikaru agent for this repository, validate it and run one task.",
+      "Run my Sikaru eval dataset against the live agent and show the failures."
+    ],
+    "brandColor": "#218358",
+    "composerIcon": "./assets/sikaru-icon-512.png",
+    "logo": "./assets/sikaru-icon-512.png"
+  }
+}
