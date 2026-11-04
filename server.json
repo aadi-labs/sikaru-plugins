@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.sikaru/docs",
+  "title": "Sikaru Docs",
+  "description": "Read-only search over the public Sikaru documentation: managed agents, inference, evals and traces.",
+  "version": "1.0.0",
+  "websiteUrl": "https://docs.sikaru.ai",
+  "repository": { "url": "https://github.com/aadi-labs/sikaru-plugins", "source": "github" },
+  "remotes": [
+    { "type": "streamable-http", "url": "https://docs.sikaru.ai/_mcp/server" }
+  ]
+}

@@ -146,6 +146,7 @@ starting credit.
 | `.claude-plugin/` | Claude Code plugin and marketplace manifests |
 | `.codex-plugin/`, `.agents/plugins/` | Codex plugin and marketplace manifests |
 | `.mcp.json` | The `sikaru-docs` MCP server for Claude Code and Codex |
+| `server.json` | The docs server's [MCP Registry](https://registry.modelcontextprotocol.io) entry, `ai.sikaru/docs` |
 | `plugin.json`, `mcp.json` | [Agent Plugins](https://agent-plugins.org/specification) manifest and MCP servers, used by Capy and other spec-following hosts |
 | `skills/` | The skills; each has a `SKILL.md` and Codex metadata in `agents/openai.yaml` |
 | `skills.sh.json` | Skill list for `npx skills` |
