@@ -1,7 +1,8 @@
 # Sikaru plugins and skills
 
 The official Sikaru plugin for Claude Code and Codex, plus the same skills for any
-agent that loads `SKILL.md` files. Your coding agent learns to sign you up for
+agent that loads `SKILL.md` files: Cursor, Devin, Capy, Pi, OpenCode, Gemini CLI,
+GitHub Copilot, Amp, Cline, Windsurf, Goose and more. Your coding agent learns to sign you up for
 Sikaru, choose a project, and then work with it: call catalog models, ask System One
 decisions, write and publish managed agents, evaluate them in RL environments, and
 upload traces.
@@ -32,7 +33,66 @@ codex plugin add sikaru@sikaru
 npx skills add aadi-labs/sikaru-plugins
 ```
 
-Or copy a folder from [`skills/`](skills) into your agent's skills directory.
+The installer detects the agents you have and asks where to install. To pick one,
+pass its name with `-a` (add `-g` to install for your user instead of the project):
+
+| Agent | Command |
+| --- | --- |
+| Pi | `npx skills add aadi-labs/sikaru-plugins -a pi` |
+| OpenCode | `npx skills add aadi-labs/sikaru-plugins -a opencode` |
+| Cursor | `npx skills add aadi-labs/sikaru-plugins -a cursor` |
+| Devin for Terminal | `npx skills add aadi-labs/sikaru-plugins -a devin` |
+| Gemini CLI | `npx skills add aadi-labs/sikaru-plugins -a gemini-cli` |
+| GitHub Copilot | `npx skills add aadi-labs/sikaru-plugins -a github-copilot` |
+| Amp | `npx skills add aadi-labs/sikaru-plugins -a amp` |
+| Cline | `npx skills add aadi-labs/sikaru-plugins -a cline` |
+| Windsurf | `npx skills add aadi-labs/sikaru-plugins -a windsurf` |
+| Goose | `npx skills add aadi-labs/sikaru-plugins -a goose` |
+| Factory Droid | `npx skills add aadi-labs/sikaru-plugins -a droid` |
+| Kilo Code | `npx skills add aadi-labs/sikaru-plugins -a kilo` |
+| Roo Code | `npx skills add aadi-labs/sikaru-plugins -a roo` |
+| Zed | `npx skills add aadi-labs/sikaru-plugins -a zed` |
+| Warp | `npx skills add aadi-labs/sikaru-plugins -a warp` |
+| OpenHands | `npx skills add aadi-labs/sikaru-plugins -a openhands` |
+| Kiro CLI | `npx skills add aadi-labs/sikaru-plugins -a kiro-cli` |
+| Qwen Code | `npx skills add aadi-labs/sikaru-plugins -a qwen-code` |
+
+Any other agent that reads `SKILL.md` files works too: copy a folder from
+[`skills/`](skills) into its skills directory. See the
+[full list of supported agents](https://github.com/vercel-labs/skills/blob/main/docs/agents.md).
+
+### Capy
+
+Capy installs this repository as a plugin, skills and docs server together: open
+**Settings → MCP & plugins**, choose **From GitHub repository**, and enter
+`https://github.com/aadi-labs/sikaru-plugins`. Click **Sync** on the plugin page to pick
+up new versions. To keep the skills in one repository instead, install them where Capy
+reads repository skills:
+
+```sh
+npx skills add aadi-labs/sikaru-plugins -a universal
+```
+
+That writes to `.agents/skills/`, which Capy, Cursor, Codex, OpenCode, Pi and other
+agents all read.
+
+### Docs over MCP in other agents
+
+Claude Code, Codex and Capy get the docs server from the plugin. Elsewhere, add
+`https://docs.sikaru.ai/_mcp/server` as a remote MCP server (Streamable HTTP, no
+credentials):
+
+- OpenCode, in `opencode.json`:
+  `{"mcp": {"sikaru-docs": {"type": "remote", "url": "https://docs.sikaru.ai/_mcp/server"}}}`
+- Gemini CLI, in `~/.gemini/settings.json`:
+  `{"mcpServers": {"sikaru-docs": {"httpUrl": "https://docs.sikaru.ai/_mcp/server"}}}`
+- Cursor, in `.cursor/mcp.json`:
+  `{"mcpServers": {"sikaru-docs": {"url": "https://docs.sikaru.ai/_mcp/server"}}}`
+- GitHub Copilot in VS Code, in `.vscode/mcp.json`:
+  `{"servers": {"sikaru-docs": {"type": "http", "url": "https://docs.sikaru.ai/_mcp/server"}}}`
+
+Agents without MCP, such as Pi, read the same docs as Markdown: start at
+https://docs.sikaru.ai/llms.txt.
 
 ## Then ask your agent
 
@@ -85,7 +145,8 @@ starting credit.
 | --- | --- |
 | `.claude-plugin/` | Claude Code plugin and marketplace manifests |
 | `.codex-plugin/`, `.agents/plugins/` | Codex plugin and marketplace manifests |
-| `.mcp.json` | The `sikaru-docs` MCP server |
+| `.mcp.json` | The `sikaru-docs` MCP server for Claude Code and Codex |
+| `plugin.json`, `mcp.json` | [Agent Plugins](https://agent-plugins.org/specification) manifest and MCP servers, used by Capy and other spec-following hosts |
 | `skills/` | The skills; each has a `SKILL.md` and Codex metadata in `agents/openai.yaml` |
 | `skills.sh.json` | Skill list for `npx skills` |
 | `scripts/validate.py` | Manifest, skill and CLI-command checks |
